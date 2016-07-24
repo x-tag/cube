@@ -1,9 +1,9 @@
 {
   "name": "x-tag-cube",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "dependencies": {},
   "devDependencies": {
-    "bower": "~1.7.7",
+    "bower": "~1.7.9",
     "grunt": "~0.4.5",
     "grunt-contrib-concat": "~0.1.3",
     "grunt-smush-components": "~0.2.0",

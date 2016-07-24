@@ -11,6 +11,8 @@
   function setDistance(cube){
     cube.style.transform = cube.style[prefixedTransform] = 'rotateX(' + (cube.getAttribute('rotate-x') || 0) + ')' +
                                                           ' rotateY(' + (cube.getAttribute('rotate-y') || 0) + ')' +
+                                                          ' translateX(' + (cube.getAttribute('translate-y') || 0) + ')' +
+                                                          ' translateY(' + (cube.getAttribute('translate-y') || 0) + ')' +
                                                           ' translateZ(' + (cube.getAttribute('distance') || 0) + ')';
   };
 
@@ -38,7 +40,7 @@
           def: 1
         },
         set: function(val){
-          this.style.width = val + 'em';
+          this.style.width = val;
         }
       },
       height: {
@@ -46,7 +48,7 @@
           def: 1
         },
         set: function(val){
-          this.style.height = val + 'em';
+          this.style.height = val;
         }
       },
       depth: {
@@ -54,13 +56,14 @@
           def: 1
         },
         set: function(val){
-          var ems = val + 'em';
-          this.xtag.left.style.width = this.xtag.right.style.width = this.xtag.top.style.height = this.xtag.bottom.style.height = ems;
-          this.xtag.back.style.transform = this.xtag.back.style[prefixedTransform] = 'translateZ(' + ems + ')';
+          this.xtag.left.style.width = this.xtag.right.style.width = this.xtag.top.style.height = this.xtag.bottom.style.height = val;
+          this.xtag.back.style.transform = this.xtag.back.style[prefixedTransform] = 'translateZ(' + val + ')';
         }
       },
       rotateX: transformAttr,
       rotateY: transformAttr,
+      translateX: transformAttr,
+      translateY: transformAttr,
       distance: transformAttr
     }
   });
