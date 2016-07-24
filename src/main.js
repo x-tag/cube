@@ -11,9 +11,7 @@
   function setDistance(cube){
     cube.style.transform = cube.style[prefixedTransform] = 'rotateX(' + (cube.getAttribute('rotate-x') || 0) + ')' +
                                                           ' rotateY(' + (cube.getAttribute('rotate-y') || 0) + ')' +
-                                                          ' translateX(' + (cube.getAttribute('translate-y') || 0) + ')' +
-                                                          ' translateY(' + (cube.getAttribute('translate-y') || 0) + ')' +
-                                                          ' translateZ(' + (cube.getAttribute('distance') || 0) + ')';
+                                                          ' translate3d(' + (cube.getAttribute('translate') || '0,0,0') + ')'
   };
 
   xtag.register('x-cube', {
@@ -62,9 +60,7 @@
       },
       rotateX: transformAttr,
       rotateY: transformAttr,
-      translateX: transformAttr,
-      translateY: transformAttr,
-      distance: transformAttr
+      translate: transformAttr
     }
   });
 
